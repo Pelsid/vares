@@ -149,7 +149,7 @@ sendInput.addEventListener("input", function () {
 
 
 // получаем элемент div по id
-const divElement = document.getElementById('qwerty');
+const divElement = document.getElementById('map');
 
 // создаем новый объект XMLHttpRequest
 const xhr = new XMLHttpRequest();
