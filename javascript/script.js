@@ -1,3 +1,9 @@
+/*---------------------------------
+
+			SLOW SCROLL
+			
+---------------------------------*/
+
 const links = document.querySelectorAll('a[href^="#"]');
 
 links.forEach(link => {
@@ -7,7 +13,7 @@ links.forEach(link => {
     const href = this.getAttribute('href');
     const target = document.querySelector(href);
     const topOffset = target.getBoundingClientRect().top + window.pageYOffset;
-    const duration = 500; // время анимации в миллисекундах
+    const duration = 500;
 
     window.scrollTo({
       top: topOffset,
