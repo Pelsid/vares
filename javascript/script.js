@@ -186,6 +186,7 @@ const qwertyElements = document.querySelectorAll('.russia');
 
 // Добавляем обработчики событий для каждого элемента
 qwertyElements.forEach(element => {
+	alert(1);
   element.addEventListener('mouseover', () => {
     // Добавляем класс qwerty--active при наведении
     element.classList.add('russia--border');
