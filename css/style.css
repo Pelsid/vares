@@ -60,7 +60,7 @@ body {
     position: relative;
 }
 
-input:focus{
+input:focus {
     border-bottom: 1px solid #009bd9;
 }
 
@@ -260,7 +260,7 @@ input::-webkit-inner-spin-button {
     transition: all 0.5s;
 }
 
-.first-screen__get-input.input--active{
+.first-screen__get-input.input--active {
     padding: 25px 20px 11px 20px;
 }
 
@@ -399,7 +399,7 @@ img.first-screen__first-img {
     width: 80px;
 }
 
-.first-screen__label.label{
+.first-screen__label.label {
     position: absolute;
     top: 21px;
     left: 19px;
@@ -432,7 +432,7 @@ img.first-screen__first-img {
     cursor: pointer;
 }
 
-.send__selected::after{
+.send__selected::after {
     content: ">";
     transform: rotate(90deg);
     position: relative;
@@ -444,7 +444,7 @@ img.send__selected-img {
     border-radius: 2px;
 }
 
-.send__selected-span{
+.send__selected-span {
     margin-left: 10px;
 }
 
@@ -460,31 +460,31 @@ img.send__selected-img {
     background-color: #fff;
 }
 
-.send__list-country--show{
+.send__list-country--show {
     display: flex;
 }
 
-.send__item{
+.send__item {
     display: flex;
     padding: 5px 6px;
     border-bottom: 1px solid;
     cursor: pointer;
 }
 
-.send__item:hover{
+.send__item:hover {
     background-color: #009bd9;
 }
 
-.send__item:last-child{
+.send__item:last-child {
     border-bottom: none;
 }
 
-.send__item-img{
+.send__item-img {
     max-width: 25px;
     border-radius: 2px;
 }
 
-.send__item-span{
+.send__item-span {
     margin-left: 10px;
 }
 
@@ -496,7 +496,12 @@ img.send__selected-img {
     right: 0;
 }
 
-.get__selected {display: flex;padding: 19px 0px;cursor: pointer;}
+.get__selected {
+    display: flex;
+    padding: 19px 0px;
+    cursor: pointer;
+}
+
 .get__selected::after {
     content: ">";
     transform: rotate(90deg);
@@ -504,9 +509,12 @@ img.send__selected-img {
     left: 12px;
 }
 
-.get__selected-img{max-width: 25px;border-radius: 2px;}
+.get__selected-img {
+    max-width: 25px;
+    border-radius: 2px;
+}
 
-.get__selected-span{
+.get__selected-span {
     margin-left: 10px;
 }
 
@@ -524,7 +532,7 @@ img.get__selected-img {}
     background-color: #fff;
 }
 
-.get__list-country--show{
+.get__list-country--show {
     display: flex;
 }
 
@@ -535,12 +543,12 @@ img.get__selected-img {}
     cursor: pointer;
 }
 
-.get__item:hover{
+.get__item:hover {
     background-color: #009bd9;
 }
 
-.get__item:last-child{
-  border-bottom: none;  
+.get__item:last-child {
+    border-bottom: none;
 }
 
 .get__item-img {
@@ -560,13 +568,22 @@ span.get__item-span {
 
 .about {
     padding-top: 153px;
+    padding-bottom: 484px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
 }
 
 .about__header {
     margin-bottom: 54px;
+    position: relative;
+    z-index: 10;
 }
 
-.about__list {}
+.about__list {
+    position: relative;
+    z-index: 10;
+}
 
 .about__item {
     margin-bottom: 32px;
@@ -614,9 +631,7 @@ span.get__item-span {
 
 ---------------------------------*/
 
-.instruction {
-    padding-top: 484px;
-}
+.instruction {}
 
 .instruction__content {
     display: flex;
@@ -908,7 +923,7 @@ span.get__item-span {
     cursor: pointer;
 }
 
-.contacts__label.label{
+.contacts__label.label {
     position: absolute;
     top: 21px;
     left: 19px;
@@ -1220,7 +1235,7 @@ span.get__item-span {
         width: 100%;
     }
 
-    .contacts__wrap-fields:first-child{
+    .contacts__wrap-fields:first-child {
         margin-right: 0px;
     }
 
@@ -1347,15 +1362,31 @@ span.get__item-span {
     padding: 29px 20px 9px 20px;
 }
 
-input::-webkit-input-placeholder{
+input::-webkit-input-placeholder {
     position: absolute;
     top: 19px;
     font-size: 13px;
     transition: color 0.8s, top 0.5s, font-size 0.1s;
 }
 
-input.input--active::-webkit-input-placeholder{
+input.input--active::-webkit-input-placeholder {
     color: #7f818200;
     top: 10px;
     font-size: 10px;
+}
+
+
+.about__map {
+    position: absolute;
+    top: -200px;
+    left: 250px;
+}
+
+.about__map-svg {
+    width: 3000px;
+    height: 1500px;
+}
+
+.about__map-svg [fill="white"]:hover{
+    stroke: #009bd9;
 }
