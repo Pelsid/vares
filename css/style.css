@@ -1387,7 +1387,7 @@ input.input--active::-webkit-input-placeholder {
     left: 250px;
 }
 
-.about__map-svg {
+.about__map svg {
     width: 3000px;
     height: 1500px;
 }
