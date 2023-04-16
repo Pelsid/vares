@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="./img/png/favicon.png" />
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+	<title>Варес</title>
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="container">
+			<nav id="header-menu" class="header__navigation navigation">
+				<div class="navigation__logo-wrap logo">
+					<a class="navigation__logo-link" href="#"><img class="navigation__logo-img"
+							src="./img/svg/vares.svg" alt="logo"></a>
+				</div>
+				<div class="navigation__list-wrap">
+					<ul class="navigation__link-list">
+						<li class="navigation__item"><a class="navigation__link" href="#">Калькулятор</a></li>
+						<li class="navigation__item"><a class="navigation__link" href="#">Инструкция</a></li>
+						<li class="navigation__item"><a class="navigation__link" href="#">Преимущества</a></li>
+						<li class="navigation__item"><a class="navigation__link" href="#">Пункты обслуживания</a></li>
+						<li class="navigation__item"><a class="navigation__link" href="#">Поддержка</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div id="menu-hamburger" class="header__menu-btn menu-btn" onclick="showMenu ()">
+			<div class="menu-btn__line"></div>
+			<div class="menu-btn__line"></div>
+			<div class="menu-btn__line"></div>
+		</div>
+	</header>
+
+	<main>
+
+		<section class="first-screen">
+			<div class="container">
+				<div class="first-screen__top-wrap">
+					<div class="first-screen__text">
+						<h1>Денежные переводы
+							<span class="first-screen__span--blue">без комиссии</span> в страны
+							СНГ и за рубеж
+						</h1>
+						<p class="first-screen__paragraph">Моментально и безопасно отправляйте
+							денежные переводы онлайн через Telegram</p>
+					</div>
+					<div class="first-screen__calculator">
+						<div class="first-screen__send send">
+							<label class="first-screen__label label">Вы отправляете</label>
+							<input class="first-screen__send-input input" type="number" placeholder="Вы отправляете">
+							<div class="send__select-country">
+								<div id="send__select" class="send__selected">
+									<img class="send__selected-img" src="./img/png/russia.png" alt="Russia"> <span class="send__selected-span"> RUB</span>
+								</div>
+								<ul class="send__list-country">
+									<li id="rub" class="send__item"><img class="send__item-img" src="./img/png/russia.png" alt="Russia"> <span class="send__item-span"> RUB</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="first-screen__get get">
+							<label class="first-screen__label label">Получатель получит</label>
+							<input class="first-screen__get-input input" type="number" placeholder="Получатель получит">
+							<div class="get__select-country">
+								<div id="get__select" class="get__selected">
+									<img class="ger__selected-img" src="./img/png/america.png" alt="America"> <span class="get__selected-span">USD</span>
+								</div>
+								<ul class="get__list-country">
+									<li id="usd" class="get__item"><img class="get__item-img" src="./img/png/america.png" alt="America"> <span class="get__item-span"> USD</span></li>
+									<li id="chf" class="get__item"><img class="get__item-img" src="./img/png/switzerland.png" alt="Switzerland"> <span class="get__item-span"> CHF</span></li>
+									<li id="kzt" class="get__item"><img class="get__item-img" src="./img/png/kazakhstan.png" alt="Kazakhstan"> <span class="get__item-span"> KZT</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="first-screen__current-course">Текущий курс: <span id="exchange-rate"></span></div>
+						<div class="first-screen__wrap-link">
+							<a class="first-screen__telegram-link" href="https://t.me/cbrates_bot"
+								rel="nofollow">Перейти в
+								Telegram-бот</a>
+						</div>
+					</div>
+				</div>
+				<div class="first-screen__points">
+					<div class="first-screen__point first-screen__blue--point">
+						<div class="first-screen__point-wrap">
+							<img class="first-screen__point-img first-screen__point-img--invert"
+								src="./img/svg/lightning.svg" alt="lightning">
+						</div>
+						<p class="first-screen__point-text first-screen__point-text--invert">Быстрые переводы с
+							телефона<br> без посещения офиса</p>
+					</div>
+					<div class="first-screen__point">
+						<div class="first-screen__point-wrap">
+							<img class="first-screen__point-img" src="./img/svg/globe.svg" alt="globe">
+						</div>
+						<p class="first-screen__point-text">Более 150 000 пунктов выдачи<br> наличных Юнистрим по всему
+							миру</p>
+					</div>
+					<div class="first-screen__point">
+						<div class="first-screen__point-wrap">
+							<img class="first-screen__point-img" src="./img/svg/coins.svg" alt="coins">
+						</div>
+						<p class="first-screen__point-text">Выгодный курс конвертации</p>
+					</div>
+				</div>
+				<div class="first-screen__telegrma-first">
+					<img class="first-screen__first-img" src="./img/svg/telegram-1.svg" alt="telegram">
+				</div>
+				<div class="first-screen__telegrma-second">
+					<img class="first-screen__second-img" src="./img/svg/telegram-2.svg" alt="telegram">
+				</div>
+				<div class="first-screen__telegrma-third">
+					<img class="first-screen__third-img" src="./img/svg/telegram-3.svg" alt="telegram">
+				</div>
+			</div>
+		</section>
+
+		<section class="about">
+			<div class="container">
+				<h2 class="about__header">О сервисе</h2>
+				<ul class="about__list">
+					<li class="about__item">
+						<div class="about__item-header item-header">
+							<div class="item-header__point-wrap">➝</div>
+							<span class="item-header__text">Что такое MOS DIGITAL. Vares?</span>
+						</div>
+						<p class="about__item-paragraph">Vares — это надежный и удобный сервис для мгновенных
+							денежных переводов через Telegram. Мы создали такой
+							продукт, который помогает людям отправлять деньги
+							быстро, просто и безопасно</p>
+					</li>
+					<li class="about__item">
+						<div class="about__item-header item-header">
+							<div class="item-header__point-wrap">➝</div>
+							<span class="item-header__text">Какие плюсы?</span>
+						</div>
+						<p class="about__item-paragraph">Перевод через Telegram — это намного проще банковского
+							перевода. Ведь нашим пользователям не нужно
+							выполнять никаких лишних действий с документами
+							и технически сложных операций</p>
+					</li>
+					<li class="about__item">
+						<div class="about__item-header item-header">
+							<div class="item-header__point-wrap">➝</div>
+							<span class="item-header__text">Кто наши партнеры?</span>
+						</div>
+						<p class="about__item-paragraph">Партнером сервиса является международная платежная
+							система Юнистрим, которая объединяет внутри себя
+							более 150 000 пунктов выдачи наличных по всему миру</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="instruction">
+			<div class="container">
+				<div class="instruction__content">
+					<div class="instruction__text">
+						<h2 class="instruction__header">Как <span class="instruction__header--blue">отправить</span>
+							перевод?</h2>
+						<ul class="instruction__list">
+							<li class="instruction__item instruction__item--invert"><span
+									class="instruction__item-number instruction__item-number--invert">1 </span>
+								<div class="instruction__item-text">Перейдите в Telegram-бот Vares</div>
+							</li>
+							<li class="instruction__item"><span class="instruction__item-number">2 </span>
+								<div class="instruction__item-text">Укажите
+									базовую информацию для совершения перевода <br>(страна
+									назначения, валюта и сумма перевода, ФИО получателя)</div>
+							</li>
+							<li class="instruction__item"><span class="instruction__item-number">3 </span>
+								<div class="instruction__item-text">Зарегистрируйтесь в платежном сервисе Vares,
+									заполнив <br> информацию о себе (ФИО, серию и номер паспорта, дату рождения)</div>
+							</li>
+							<li class="instruction__item"><span class="instruction__item-number">4 </span>
+								<div class="instruction__item-text">Сообщите
+									получателю контрольный номер перевода</div>
+							</li>
+						</ul>
+					</div>
+					<div class="instruction__phone">
+						<img src="./img/png/iPhone.png" alt="iPhone">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="contacts">
+			<div class="contacts__content">
+				<div class="contacts__frame">
+					<h2 class="contacts__frame-header">Контакты</h2>
+					<p class="contacts__frame-paragraph">Готовы попробовать?<br> Один сервис для решения всех задач
+						с
+						денежным переводом</p>
+					<a class="contacts__frame-mail" href="mailto:info@MOSDIGITAL.Vares.ru"><img
+							class="contacts__mail-img" src="./img/svg/mail.svg" alt="mail">
+						info@MOSDIGITAL.Vares.ru</a>
+					<a class="contacts__frame-telegram" href="https://t.me/cbrates_bot">Чат-бот для поддержки</a>
+				</div>
+				<div class="contacts__form-wrap">
+					<form class="contacts__form" action="#">
+						<h2 class="contacts__form-header">Остались вопросы?</h2>
+						<p class="contacts__form-paragraph">Мы всегда рады помочь и дать ответы на все,<br> что вас
+							интересует</p>
+						<div class="contacts__wrap">
+							<div class="contacts__wrap-fields">
+								<label class="contacts__label label">Имя</label>
+								<input class="form__input input" type="text" name="NAME" placeholder="Имя">
+							</div>
+							<div class="contacts__wrap-fields">
+								<label class="contacts__label label">E-mail</label>
+								<input class="form__input input" type="email" name="MAIL" placeholder="E-mail">
+							</div>
+						</div>
+						<textarea id="textarea" class="form__textarea" placeholder="Сообщение" name="TEXT" rows="4"
+							cols="50"></textarea>
+						<div class="contacts__wrap-submit">
+							<input class="contacts__submit" type="submit" value="ОТПРАВИТЬ">
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__navigation-wrap">
+				<nav class="footer__navigation navigation">
+					<div class="navigation__logo-wrap logo">
+						<a class="navigation__logo-link" href="#"><img class="navigation__logo-img"
+								src="./img/svg/vares-white.svg" alt="logo"></a>
+					</div>
+					<div class="navigation__list-wrap navigation__list-wrap-footer">
+						<ul class="navigation__link-list">
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Калькулятор</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Инструкция</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Преимущества</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Пункты обслуживания</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Поддержка</a></li>
+						</ul>
+					</div>
+				</nav>
+				<div class="footer__wrap-btn">
+					<button class="footer__btn"><img src="./img/svg/vector.svg" alt="up"></button>
+				</div>
+			</div>
+			<div class="footer__offer-wrap">
+				<div class="footer__offer-paragraph">
+					<p>Услуга предоставляется ООО «MOSDIGITAL» (ОГРН 124512355414144 ИНН 77777777777) <br>
+						Переводы денежных средств осуществляются в рамках Платежной системы Юнистрим (АО КБ «Юнистрим»
+						лицензия ЦБ РФ №3467 от 11.09.2015) <br>
+						Прием платежей и отправку денежных средств осуществляет ООО НКО «МОБИ.Деньги» (Лицензия ЦБ РФ
+						№3523-К от 28.11.2016)</p>
+				</div>
+				<div class="footer__offer-links">
+					<a class="footer__offer-link" href="#">Оферта на пользование сервисом</a>
+					<a class="footer__offer-link" href="#">Оферта НКО Моби.Деньги на списание денежных средств с
+						банковской карты клиенты</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		var svgDoc;
+
+		function init() {
+			svgDoc = document.getElementById("my-svg").contentDocument;
+			var path = svgDoc.getElementById("russia-1");
+			path.setAttribute("class", "path-1");
+		}
+
+		document.getElementById("my-svg").addEventListener("load", function () {
+			init();
+		});
+	</script>
+	<script src="./javascript/script.js" type="text/javascript"></script>
+</body>
+
+</html>
