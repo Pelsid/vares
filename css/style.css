@@ -583,6 +583,7 @@ span.get__item-span {
 .about__list {
     position: relative;
     z-index: 10;
+    max-width: 500px;
 }
 
 .about__item {
@@ -1088,6 +1089,10 @@ span.get__item-span {
         left: 0px;
     }
 
+    .about__list {
+        max-width: unset;
+    }
+
     .contacts {
         padding: 140px 200px 100px 200px;
     }
@@ -1385,6 +1390,10 @@ input.input--active::-webkit-input-placeholder {
 .about__map-svg {
     width: 3000px;
     height: 1500px;
+}
+
+.about__map-svg [fill="white"]{
+    cursor: pointer;
 }
 
 .about__map-svg [fill="white"]:hover{
