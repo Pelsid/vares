@@ -74,16 +74,16 @@ function getItem() {
 
 
 
-/* передаём данные из списка */
+/* passing data from the list */
 
 const getSpan = document.querySelector("#get-select");
 
-// получаем ссылки на все элементы списка
+// get references to all elements of the list
 const usd = document.querySelector("#usd");
 const chf = document.querySelector("#chf");
 const kzt = document.querySelector("#kzt");
 
-// добавляем обработчики кликов на каждый элемент списка
+// adding click handlers to list items
 function selectItem(currency) {
 	let spanText = currency.querySelector('.get__item-span').textContent;
 	course = parseInt(currency.getAttribute("value"));
@@ -93,22 +93,22 @@ function selectItem(currency) {
 	getInput.value = sendInput.value * course;
 }
 
-// Создаем новый элемент img
+// Create a new img element
 const img = document.createElement('img');
-// Создаем новый элемент span
+// Create a new span element
 const span = document.createElement('span');
-// Функция для добавления картинки и текста в элемент div
+// Function to add an image and text to a div element
 function addImage(li) {
-	// Удаляем все теги img и span из элемента div
+	// Remove all img and span tags from a div element
 	getSpan.innerHTML = '';
-	// Устанавливаем атрибуты для img
+	// Setting attributes for img
 	img.setAttribute('src', li.querySelector('img').getAttribute('src'));
 	img.setAttribute('alt', li.querySelector('img').getAttribute('alt'));
 	img.setAttribute('class', 'get__selected-img');
-	// Устанавливаем атрибуты для span
+	// Setting span attributes
 	span.textContent = li.querySelector('.get__item-span').textContent;
 	span.setAttribute('class', 'get__selected-span');
-	// Добавляем img и span в элемент div
+	// Add img and span to div element
 	getSpan.appendChild(img);
 	getSpan.appendChild(span);
 }
@@ -122,10 +122,11 @@ const getInput = document.querySelector("#get-input");
 const getLable = document.querySelector("#get-lable");
 const exchangeRate = document.querySelector("#exchange-rate");
 let course = usd.value;
+
 exchangeRate.textContent = `1.00 RUB = ${course} USD`;
 
 sendInput.addEventListener("input", function () {
-	// устанавливаем значение input2 в значение input1
+	// update the conversion rate when the send input is changed
 	if (sendInput.value) {
 		getInput.value = sendInput.value * course;
 		getInput.classList.add('input--active');
@@ -140,60 +141,37 @@ sendInput.addEventListener("input", function () {
 
 
 
+/*---------------------------------
+
+			EMBEDDING SVG IN HTML
+
+---------------------------------*/
 
 
-
-
-
-
-
-
-// получаем элемент div по id
 const divElement = document.getElementById('map');
-
-// создаем новый объект XMLHttpRequest
+// create a new XMLHttpRequest object
 const xhr = new XMLHttpRequest();
 
-// указываем путь к файлу map.svg
+// specify the path to the map.svg file
 xhr.open('GET', './img/svg/map.svg', true);
 
-// указываем тип ответа как текст
+// set the response type to text
 xhr.responseType = 'text';
 
-// обработчик события, который сработает при успешном завершении запроса
-xhr.onload = function() {
-  // получаем содержимое файла svg
-  const svgContent = xhr.response;
+// event handler for a successful request
+xhr.onload = function () {
+	// get the contents of the svg file
+	const svgContent = xhr.response;
 
-  // создаем новый элемент svg
-  const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+	// create a new svg element
+	const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
-  // устанавливаем содержимое svg в элемент svg
-  svgElement.innerHTML = svgContent;
+	// set the svg content to the svg element
+	svgElement.innerHTML = svgContent;
 
-  // добавляем элемент svg в элемент div
-  divElement.appendChild(svgElement);
+	// add the svg element to the div element
+	divElement.appendChild(svgElement);
 };
 
-// отправляем запрос на сервер
+// send the request
 xhr.send();
-
-
-
-
-// Получаем все элементы с классом qwerty
-const qwertyElements = document.querySelectorAll('.russia');
-
-// Добавляем обработчики событий для каждого элемента
-qwertyElements.forEach(element => {
-	alert(1);
-  element.addEventListener('mouseover', () => {
-    // Добавляем класс qwerty--active при наведении
-    element.classList.add('russia--border');
-  });
-
-  element.addEventListener('mouseout', () => {
-    // Удаляем класс qwerty--active при уходе курсора
-    element.classList.remove('russia--border');
-  });
-});
