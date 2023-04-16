@@ -1188,7 +1188,7 @@ span.get__item-span {
 
     .header__menu-btn--active {
         /* right: unset; */
-        right: 79%;
+        right: 78%;
     }
 
     .header__menu-btn--active .menu-btn__line:nth-child(1) {
@@ -1379,6 +1379,14 @@ span.get__item-span {
 
     .item-header__text {
         text-align: left;
+    }
+
+    .send__select-country {
+        right: -20px;
+    }
+
+    .get__select-country {
+        right: -20px;
     }
 
 }
