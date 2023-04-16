@@ -429,6 +429,7 @@ img.first-screen__first-img {
 .send__selected {
     display: flex;
     padding: 19px 0px;
+    cursor: pointer;
 }
 
 .send__selected::after{
@@ -447,7 +448,7 @@ img.send__selected-img {
     margin-left: 10px;
 }
 
-ul.send__list-country {
+.send__list-country {
     display: none;
     position: relative;
     top: -14px;
@@ -457,6 +458,10 @@ ul.send__list-country {
     border-radius: 5px;
     border: 1px solid;
     background-color: #fff;
+}
+
+.send__list-country--show{
+    display: flex;
 }
 
 .send__item{
@@ -499,7 +504,7 @@ ul.send__list-country {
     left: 12px;
 }
 
-.ger__selected-img{max-width: 25px;border-radius: 2px;}
+.get__selected-img{max-width: 25px;border-radius: 2px;}
 
 .get__selected-span{
     margin-left: 10px;
@@ -507,7 +512,7 @@ ul.send__list-country {
 
 img.get__selected-img {}
 
-ul.get__list-country {
+.get__list-country {
     display: none;
     position: relative;
     top: -14px;
@@ -517,6 +522,10 @@ ul.get__list-country {
     border-radius: 5px;
     border: 1px solid;
     background-color: #fff;
+}
+
+.get__list-country--show{
+    display: flex;
 }
 
 .get__item {
