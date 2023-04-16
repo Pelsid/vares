@@ -622,6 +622,25 @@ span.get__item-span {
     height: 1500px;
 }
 
+.about__map {
+    position: absolute;
+    top: -200px;
+    left: 250px;
+}
+
+.about__map svg {
+    width: 3000px;
+    height: 1500px;
+}
+
+.about__map-svg [fill="white"]{
+    cursor: pointer;
+}
+
+.about__map-svg [fill="white"]:hover{
+    stroke: #009bd9;
+}
+
 /*---------------------------------
 
             INSTRUCTION
@@ -1057,6 +1076,11 @@ span.get__item-span {
     .about {
         text-align: center;
         padding-top: 100px;
+        padding-bottom: 0px;
+    }
+
+    .about__map{
+        display: none;
     }
 
     .item-header {
@@ -1374,24 +1398,4 @@ input.input--active::-webkit-input-placeholder {
     color: #7f818200;
     top: 10px;
     font-size: 10px;
-}
-
-
-.about__map {
-    position: absolute;
-    top: -200px;
-    left: 250px;
-}
-
-.about__map svg {
-    width: 3000px;
-    height: 1500px;
-}
-
-.about__map-svg [fill="white"]{
-    cursor: pointer;
-}
-
-.about__map-svg [fill="white"]:hover{
-    stroke: #009bd9;
 }
