@@ -1,3 +1,22 @@
+const links = document.querySelectorAll('a[href^="#"]');
+
+links.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const href = this.getAttribute('href');
+    const target = document.querySelector(href);
+    const topOffset = target.getBoundingClientRect().top + window.pageYOffset;
+    const duration = 500; // время анимации в миллисекундах
+
+    window.scrollTo({
+      top: topOffset,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
 /*---------------------------------
 
 			MENU-BURGER
