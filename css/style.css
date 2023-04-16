@@ -1389,6 +1389,14 @@ span.get__item-span {
         right: -20px;
     }
 
+    .send__item {
+        padding: 10px 6px;
+    }
+
+    .get__item {
+        padding: 10px 6px;
+    }
+
 }
 
 .input--active {
