@@ -177,3 +177,22 @@ xhr.onload = function() {
 
 // отправляем запрос на сервер
 xhr.send();
+
+
+
+
+// Получаем все элементы с классом qwerty
+const qwertyElements = document.querySelectorAll('.russia');
+
+// Добавляем обработчики событий для каждого элемента
+qwertyElements.forEach(element => {
+  element.addEventListener('mouseover', () => {
+    // Добавляем класс qwerty--active при наведении
+    element.classList.add('russia--border');
+  });
+
+  element.addEventListener('mouseout', () => {
+    // Удаляем класс qwerty--active при уходе курсора
+    element.classList.remove('russia--border');
+  });
+});
