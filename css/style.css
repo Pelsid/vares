@@ -267,8 +267,8 @@ input::-webkit-inner-spin-button {
 .first-screen__current-course {
     margin-top: 15px;
     margin-bottom: 35px;
+    text-align: center;
     color: #959595;
-    padding-left: 63px;
     position: relative;
     z-index: 10;
 }
