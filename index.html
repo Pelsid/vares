@@ -72,9 +72,9 @@
 									<img class="get__selected-img" src="./img/png/america.png" alt="America"> <span class="get__selected-span">USD</span>
 								</div>
 								<ul id="get-list" class="get__list-country">
-									<li id="usd" class="get__item" onclick="selectItem(usd)" value="70"><img class="get__item-img" src="./img/png/america.png" alt="America"> <span class="get__item-span"> USD</span></li>
-									<li id="chf" class="get__item" onclick="selectItem(chf)" value="90"><img class="get__item-img" src="./img/png/switzerland.png" alt="Switzerland"> <span class="get__item-span"> CHF</span></li>
-									<li id="kzt" class="get__item" onclick="selectItem(kzt)" value="20"><img class="get__item-img" src="./img/png/kazakhstan.png" alt="Kazakhstan"> <span class="get__item-span"> KZT</span></li>
+									<li id="usd" class="get__item" onclick="selectItem(usd)" data-value="70" ><img class="get__item-img" src="./img/png/america.png" alt="America"> <span class="get__item-span"> USD</span></li>
+									<li id="chf" class="get__item" onclick="selectItem(chf)" data-value="90" ><img class="get__item-img" src="./img/png/switzerland.png" alt="Switzerland"> <span class="get__item-span"> CHF</span></li>
+									<li id="kzt" class="get__item" onclick="selectItem(kzt)" data-value="16" ><img class="get__item-img" src="./img/png/kazakhstan.png" alt="Kazakhstan"> <span class="get__item-span"> KZT</span></li>
 								</ul>
 							</div>
 						</div>
@@ -242,16 +242,21 @@
 					</div>
 					<div class="navigation__list-wrap navigation__list-wrap-footer">
 						<ul class="navigation__link-list">
-							<li class="navigation__item"><a class="navigation__link navigation__link--white" href="#calculator">Калькулятор</a></li>
-							<li class="navigation__item"><a class="navigation__link navigation__link--white" href="#instruction">Инструкция</a></li>
-							<li class="navigation__item"><a class="navigation__link navigation__link--white" href="#advantages">Преимущества</a></li>
-							<li class="navigation__item"><a class="navigation__link navigation__link--white" href="#map">Пункты обслуживания</a></li>
-							<li class="navigation__item"><a class="navigation__link navigation__link--white" href="#contacts">Поддержка</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Калькулятор</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Инструкция</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Преимущества</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Пункты обслуживания</a></li>
+							<li class="navigation__item"><a class="navigation__link navigation__link--white"
+									href="#">Поддержка</a></li>
 						</ul>
 					</div>
 				</nav>
 				<div class="footer__wrap-btn">
-					<a class="footer__btn" href="#header-menu"><img src="./img/svg/vector.svg" alt="up"></a>
+					<button class="footer__btn"><img src="./img/svg/vector.svg" alt="up"></button>
 				</div>
 			</div>
 			<div class="footer__offer-wrap">
