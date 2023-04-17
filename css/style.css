@@ -989,6 +989,10 @@ span.get__item-span {
     color: #fff;
 }
 
+.navigation__link--white:hover {
+    border-bottom: 1px solid #fff;
+}
+
 .footer__wrap-btn {
     margin-right: 11px;
 }
