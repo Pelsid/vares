@@ -221,14 +221,13 @@ const sendInput = document.querySelector("#send-input");
 const getInput = document.querySelector("#get-input");
 const getLable = document.querySelector("#get-lable");
 const exchangeRate = document.querySelector("#exchange-rate");
+let course;
 let divide;
-let course = usd.value;
-
-exchangeRate.textContent = `1.00 RUB = загружаем данные`;
 
 sendInput.addEventListener("input", function () {
 	// update the conversion rate when the send input is changed
 	if (sendInput.value) {
+		course = usd.dataset.value;
 		divide = sendInput.value / course;
 		getInput.value = divide.toFixed(2);
 		getInput.classList.add('input--active');
@@ -239,6 +238,9 @@ sendInput.addEventListener("input", function () {
 		getLable.classList.remove('label--active');
 	}
 });
+
+//get information about the current course
+exchangeRate.textContent = `1.00 RUB = загружаем данные`;
 
 
 
