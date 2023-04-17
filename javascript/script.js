@@ -1,26 +1,30 @@
 /*---------------------------------
 
 			SLOW SCROLL
-			
+
 ---------------------------------*/
 
 const links = document.querySelectorAll('a[href^="#"]');
 
 links.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
+	link.addEventListener('click', function (e) {
+		e.preventDefault();
 
-    const href = this.getAttribute('href');
-    const target = document.querySelector(href);
-    const topOffset = target.getBoundingClientRect().top + window.pageYOffset;
-    const duration = 500;
+		const href = this.getAttribute('href');
+		const target = document.querySelector(href);
+		const topOffset = target.getBoundingClientRect().top + window.pageYOffset;
+		const duration = 500;
 
-    window.scrollTo({
-      top: topOffset,
-      behavior: 'smooth'
-    });
-  });
+		window.scrollTo({
+			top: topOffset,
+			behavior: 'smooth'
+		});
+	});
 });
+
+
+
+
 
 
 /*---------------------------------
@@ -43,6 +47,9 @@ function showMenu() {
 		scroll = true;
 	}
 }
+
+
+
 
 
 
@@ -70,13 +77,14 @@ inputFields.forEach((inputField, index) => {
 
 
 
+
+
 /*---------------------------------
 
-			CURRENCY CONVERTER
+		SHOW LIST OF CURRENCY
 
 ---------------------------------*/
 
-/* list-buttons */
 
 const sendList = document.querySelector("#send-list");
 const getList = document.querySelector("#get-list");
@@ -99,9 +107,72 @@ function getItem() {
 
 
 
-/* passing data from the list */
 
-const getSpan = document.querySelector("#get-select");
+
+
+/*---------------------------------
+
+			CURRENCY API
+
+---------------------------------*/
+
+// just in case the API doesn't work
+let currencies = {
+	'CHF': 90,
+	'KZT': 16,
+	'USD': 80
+};
+
+// processing data in an asynchronous function
+async function getExchangeRate(currency_1, currency_2) {
+	const myHeaders = new Headers();
+	myHeaders.append("apikey", "L0LXufaPKxLwNSRL5bV47wABw8i67xjZ");
+
+	const requestOptions = {
+		method: 'GET',
+		redirect: 'follow',
+		headers: myHeaders
+	};
+
+	// we prescribe the path, as well as indicate the currencies to get the conversion
+	const response = await fetch(`https://api.apilayer.com/exchangerates_data/latest?symbols=${currency_1}&base=${currency_2}`, requestOptions);
+	const result = await response.json();
+	return result;
+}
+
+// specify the currencies and set the value inside then
+getExchangeRate('RUB', 'USD')
+	.then(response => {
+		currencies.USD = response.rates.RUB;
+		usd.dataset.value = currencies.USD.toFixed(2);
+		exchangeRate.textContent = `1.00 RUB = ${usd.dataset.value} USD`;
+	})
+	.catch(error => console.log('error', error));
+
+getExchangeRate('RUB', 'CHF')
+	.then(response => {
+		currencies.CHF = response.rates.RUB;
+		chf.dataset.value = currencies.CHF.toFixed(2);
+	})
+	.catch(error => console.log('error', error));
+
+getExchangeRate('RUB', 'KZT')
+	.then(response => {
+		currencies.KZT = response.rates.RUB;
+		kzt.dataset.value = currencies.KZT.toFixed(2);
+	})
+	.catch(error => console.log('error', error));
+
+
+
+
+
+
+/*---------------------------------
+
+			CALCULATOR
+
+---------------------------------*/
 
 // get references to all elements of the list
 const usd = document.querySelector("#usd");
@@ -111,17 +182,22 @@ const kzt = document.querySelector("#kzt");
 // adding click handlers to list items
 function selectItem(currency) {
 	let spanText = currency.querySelector('.get__item-span').textContent;
-	course = parseInt(currency.getAttribute("value"));
+	course = currency.dataset.value;
 	exchangeRate.textContent = `1.00 RUB = ${course} ${spanText}`;
 	addImage(currency);
 	getItem();
-	getInput.value = sendInput.value * course;
+	divide = sendInput.value / course;
+	getInput.value = divide.toFixed(2);
 }
 
+
+const getSpan = document.querySelector("#get-select");
 // Create a new img element
 const img = document.createElement('img');
 // Create a new span element
 const span = document.createElement('span');
+
+
 // Function to add an image and text to a div element
 function addImage(li) {
 	// Remove all img and span tags from a div element
@@ -139,21 +215,22 @@ function addImage(li) {
 }
 
 
-
 /* calculate */
 
 const sendInput = document.querySelector("#send-input");
 const getInput = document.querySelector("#get-input");
 const getLable = document.querySelector("#get-lable");
 const exchangeRate = document.querySelector("#exchange-rate");
+let divide;
 let course = usd.value;
 
-exchangeRate.textContent = `1.00 RUB = ${course} USD`;
+exchangeRate.textContent = `1.00 RUB = загружаем данные`;
 
 sendInput.addEventListener("input", function () {
 	// update the conversion rate when the send input is changed
 	if (sendInput.value) {
-		getInput.value = sendInput.value * course;
+		divide = sendInput.value / course;
+		getInput.value = divide.toFixed(2);
 		getInput.classList.add('input--active');
 		getLable.classList.add('label--active');
 	} else {
@@ -166,9 +243,10 @@ sendInput.addEventListener("input", function () {
 
 
 
+
 /*---------------------------------
 
-			EMBEDDING SVG IN HTML
+		EMBEDDING SVG IN HTML
 
 ---------------------------------*/
 
