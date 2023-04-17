@@ -1231,6 +1231,10 @@ span.get__item-span {
         text-transform: uppercase;
         text-align: center;
     }
+    
+    .navigation__mobile--none{
+        display: none;
+    }
 
     .contacts__form-header {
         text-align: center;
