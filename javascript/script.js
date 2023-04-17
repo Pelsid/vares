@@ -126,7 +126,7 @@ let currencies = {
 // processing data in an asynchronous function
 async function getExchangeRate(currency_1, currency_2) {
 	const myHeaders = new Headers();
-	myHeaders.append("apikey", "L0LXufaPKxLwNSRL5bV47wABw8i67xjZ");
+	myHeaders.append("apikey", "dSoCBz9kUvMOnIOTFvl2vBR2cStNrEvy");
 
 	const requestOptions = {
 		method: 'GET',
