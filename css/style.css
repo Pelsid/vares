@@ -919,7 +919,8 @@ span.get__item-span {
     border-radius: 5px 5px 0px 0px;
     border-bottom: 1px solid #009bd945;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: 'Rubik';
     color: #000;
     background-color: #009bd929;
     resize: none;
